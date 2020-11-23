@@ -17,24 +17,6 @@ jobs:
           go build -v .
           go test -v -coverprofile cover.out
           ls
-#       - name: Archive code coverage results
-#         uses: actions/upload-artifact@v1
-#         with:
-#           name: code-coverage-report
-#           path: bin
-
-  sonarCloudTrigger:
-    needs: build
-    name: SonarCloud Trigger
-    runs-on: ubuntu-latest
-    steps:
-      - name: Clone Repository
-        uses: actions/checkout@master
-#       - name: Download code coverage results
-#         uses: actions/download-artifact@v1
-#         with:
-#           name: code-coverage-report
-#           path: bin
       - name: Analyze with SonarCloud
         uses: sonarsource/sonarcloud-github-action@master
         env:
