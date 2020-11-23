@@ -29,4 +29,7 @@ jobs:
             -Dsonar.projectName=oauth1-signer-go
             -Dsonar.host.url=https://sonarcloud.io
             -Dsonar.go.coverage.reportPaths=./cover.out
+            -Dsonar.exclusions=**/*_test.go,**/vendor/**,**/testdata/*
+            -Dsonar.test.inclusions=**/*_test.go
+            -Dsonar.test.exclusions=**/vendor/**
             -Dsonar.login=${{ secrets.SONAR_TOKEN }}
